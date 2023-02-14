@@ -30,4 +30,9 @@
         left join users as u on u.id = sc.seller_id
         where sc.id = #{id};
     </select>
+    <update id="successDeal">
+        update Selling_car set
+        buyer_id = #{buyerId}, buy_check = 1
+        where id = #{id};
+    </update>
 </mapper>
