@@ -2,6 +2,7 @@ package com.usedcar.dev.service;
 
 import com.usedcar.dev.domain.dto.SellingList;
 import com.usedcar.dev.domain.request.PutCarRequest;
+import com.usedcar.dev.domain.request.SuccessDealRequest;
 import com.usedcar.dev.domain.response.AllSellingResponse;
 import com.usedcar.dev.domain.response.OneSellingResponse;
 import com.usedcar.dev.repository.SellingCarRepository;
@@ -46,4 +47,11 @@ public class SellingCarServiceImpl implements SellingCarService{
         }
         return oneSellingResponse;
     }
+
+    @Override
+    public Integer successDeal(SuccessDealRequest request) {
+        return sellingCarRepository.successDeal(request);
+    }
+
+
 }

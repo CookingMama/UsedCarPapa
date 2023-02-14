@@ -6,12 +6,12 @@
         SELECT
         id, user_id, user_pw, name, phone_number, locale, nick_name, email
         FROM
-        user
+        users
         WHERE
         user_id = #{userId} AND user_pw = #{userPw}
     </select>
     <insert id="signup" useGeneratedKeys="true" keyColumn="id" >
-        INSERT INTO user (user_id, user_pw, name, phone_number, locale, nick_name, email)
+        INSERT INTO users (user_id, user_pw, name, phone_number, locale, nick_name, email)
         VALUES (#{userId}, #{userPw}, #{name}, #{phoneNumber}, #{locale}, #{nickName}, #{email})
     </insert>
 </mapper>

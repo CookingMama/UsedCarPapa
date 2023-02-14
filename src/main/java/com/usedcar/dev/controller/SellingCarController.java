@@ -1,9 +1,11 @@
 package com.usedcar.dev.controller;
 
 import com.usedcar.dev.domain.request.PutCarRequest;
+import com.usedcar.dev.domain.request.SuccessDealRequest;
 import com.usedcar.dev.domain.response.AllSellingResponse;
 import com.usedcar.dev.domain.response.OneSellingResponse;
 import com.usedcar.dev.service.SellingCarServiceImpl;
+import io.swagger.v3.oas.models.security.SecurityScheme;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,5 +30,10 @@ public class SellingCarController {
     @GetMapping("/{id}")
     public OneSellingResponse findOneSellingById(@PathVariable("id") Integer id) {
         return sellingCarService.findOneSellingById(id);
+    }
+
+    @PutMapping
+    public Integer successDeal(@RequestBody SuccessDealRequest request){
+        return sellingCarService.successDeal(request);
     }
 }
