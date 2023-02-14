@@ -2,8 +2,6 @@ package com.usedcar.dev.domain.dto;
 
 import lombok.*;
 
-import java.time.LocalDateTime;
-
 @Getter @Setter
 @AllArgsConstructor @NoArgsConstructor
 @Builder
@@ -19,7 +17,8 @@ public class SellingCar {
     private String driveType;
     private Integer mileage;
     private String location;
-    private String buyDate;
+    private Integer buyTear;
+    private Integer buyMonth;
     private Integer price;
     private Integer buyerId;
     private Integer buyCheck;
