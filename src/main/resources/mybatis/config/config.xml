@@ -13,5 +13,6 @@
     </typeAliases>
     <mappers>
         <mapper resource="mybatis/mapper/userMapper.xml"/>
+        <mapper resource="mybatis/mapper/sellingCarMapper.xml"/>
     </mappers>
 </configuration>
