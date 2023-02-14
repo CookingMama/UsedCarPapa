@@ -2,8 +2,6 @@ package com.usedcar.dev.domain.request;
 
 import lombok.*;
 
-import java.time.LocalDateTime;
-
 @Getter @Setter @ToString
 @AllArgsConstructor @NoArgsConstructor
 public class PutCarRequest {
@@ -17,6 +15,7 @@ public class PutCarRequest {
     private String driveType;
     private Integer mileage;
     private String location;
-    private String buyDate; // 0000Y00M
+    private Integer buyYear;
+    private Integer buyMonth;
     private Integer price;
 }

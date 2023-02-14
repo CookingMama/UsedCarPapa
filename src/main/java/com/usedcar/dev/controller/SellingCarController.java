@@ -1,12 +1,13 @@
 package com.usedcar.dev.controller;
 
 import com.usedcar.dev.domain.request.PutCarRequest;
+import com.usedcar.dev.domain.response.AllSellingResponse;
+import com.usedcar.dev.domain.response.OneSellingResponse;
 import com.usedcar.dev.service.SellingCarServiceImpl;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor // NonNull
@@ -15,7 +16,17 @@ public class SellingCarController {
     private final SellingCarServiceImpl sellingCarService;
 
     @PostMapping
-    public Integer login(@RequestBody PutCarRequest request){
+    public Integer putCarPost(@RequestBody PutCarRequest request){
         return sellingCarService.putCar(request);
+    }
+
+    @GetMapping
+    public List<AllSellingResponse> findAllSelling(){
+        return sellingCarService.findAllSellingList();
+    }
+
+    @GetMapping("/{id}")
+    public OneSellingResponse findOneSellingById(@PathVariable("id") Integer id) {
+        return sellingCarService.findOneSellingById(id);
     }
 }
