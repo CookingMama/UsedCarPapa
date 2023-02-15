@@ -8,9 +8,7 @@ import com.usedcar.dev.domain.response.UsersResponse;
 import com.usedcar.dev.repository.UsersRepository;
 import com.usedcar.dev.security.SecurityService;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
 @Service
 @AllArgsConstructor
@@ -25,7 +23,7 @@ public class UsersService {
                     loginUser.getId(),
                     loginUser.getName(),
                     loginUser.getPhoneNumber(),
-                    loginUser.getLocal(),
+                    loginUser.getLocale(),
                     loginUser.getNickName(),
                     loginUser.getEmail(),
                     token

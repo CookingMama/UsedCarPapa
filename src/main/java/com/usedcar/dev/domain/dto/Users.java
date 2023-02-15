@@ -14,7 +14,7 @@ public class Users {
     private String userPw;
     private String name;
     private String phoneNumber;
-    private String local; //지역
+    private String locale; //지역
     private String nickName;
     private String email;
 
@@ -24,7 +24,7 @@ public class Users {
         this.userPw = request.getUserPw();
         this.name = request.getName();
         this.phoneNumber = request.getPhoneNumber();
-        this.local = request.getLocale();
+        this.locale = request.getLocale();
         this.nickName = request.getNickName();
         this.email = request.getEmail();
     }

@@ -34,7 +34,7 @@ public class SecurityService {
         map.put("id", users.getId());
         map.put("name", users.getName());
         map.put("phoneNumber", users.getPhoneNumber());
-        map.put("local", users.getLocal());
+        map.put("locale", users.getLocale());
         map.put("nickName", users.getNickName());
         map.put("email", users.getEmail());
         return Jwts.builder().setClaims(map)

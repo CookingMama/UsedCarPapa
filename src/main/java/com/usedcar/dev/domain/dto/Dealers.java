@@ -14,7 +14,7 @@ public class Dealers {
     private String dealerPw;
     private String name;
     private String phoneNumber;
-    private String local; //지역
+    private String locale; //지역
     private String nickName;
     private String email;
     private String companyName;
@@ -27,7 +27,7 @@ public class Dealers {
         this.dealerPw = request.getDealerPw();
         this.name = request.getName();
         this.phoneNumber = request.getPhoneNumber();
-        this.local = request.getLocale();
+        this.locale = request.getLocale();
         this.nickName = request.getNickName();
         this.email = request.getEmail();
         this.companyName = request.getCompanyName();

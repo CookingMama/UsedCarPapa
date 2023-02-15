@@ -22,13 +22,13 @@ public class DealerTokenInfo {
         Integer id = (Integer) claims.get("id");
         String name = (String) claims.get("name");
         String phone_number = (String) claims.get("phoneNumber");
-        String local = (String) claims.get("local");
+        String locale = (String) claims.get("locale");
         String nick_name = (String) claims.get("nickName");
         String email = (String) claims.get("email");
         String company_name = (String) claims.get("companyName");
         String position = (String) claims.get("position");
         Integer match_count = (Integer) claims.get("nickName");
 
-        return new DealerTokenInfo(id,name,phone_number,local,nick_name,email,company_name,position,match_count);
+        return new DealerTokenInfo(id,name,phone_number,locale,nick_name,email,company_name,position,match_count);
     }
 }

@@ -24,7 +24,7 @@ public class DealersService {
                     loginDealer.getId(),
                     loginDealer.getName(),
                     loginDealer.getPhoneNumber(),
-                    loginDealer.getLocal(),
+                    loginDealer.getLocale(),
                     loginDealer.getNickName(),
                     loginDealer.getEmail(),
                     loginDealer.getCompanyName(),

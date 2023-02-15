@@ -12,7 +12,7 @@ public class UsersResponse {
     private Integer id;
     private String name;
     private String phoneNumber;
-    private String local; //지역
+    private String locale; //지역
     private String nickName;
     private String email;
     private String token;
@@ -20,7 +20,7 @@ public class UsersResponse {
         this.id = tokenInfo.getId();
         this.name = tokenInfo.getName();
         this.phoneNumber = tokenInfo.getPhoneNumber();
-        this.local = tokenInfo.getLocal();
+        this.locale = tokenInfo.getLocale();
         this.nickName = tokenInfo.getNickName();
         this.email = tokenInfo.getEmail();
         this.token = token;

@@ -30,7 +30,7 @@ public class DealerSecurityService {
         map.put("id", dealers.getId());
         map.put("name", dealers.getName());
         map.put("phoneNumber", dealers.getPhoneNumber());
-        map.put("local", dealers.getLocal());
+        map.put("locale", dealers.getLocale());
         map.put("nickName", dealers.getNickName());
         map.put("email", dealers.getEmail());
         map.put("companyName",dealers.getCompanyName());
