@@ -14,5 +14,8 @@
     <mappers>
         <mapper resource="mybatis/mapper/userMapper.xml"/>
         <mapper resource="mybatis/mapper/sellingCarMapper.xml"/>
+        <mapper resource="mybatis/mapper/dealerMapper.xml"/>
+
+
     </mappers>
 </configuration>

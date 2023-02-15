@@ -7,8 +7,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class LoginRequest {
-    private String userId;
-    private String userPw;
-
+public class DealerLoginRequest {
+    private String dealerId;
+    private String dealerPw;
 }

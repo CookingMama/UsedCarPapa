@@ -7,13 +7,16 @@ import lombok.*;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class SignupRequest {
-    private String userId;
-    private String userPw;
+public class DealerSignupRequest {
+    private String dealerId;
+    private String dealerPw;
     private String name;
     private String phoneNumber;
     private String locale; // 지역
     private String nickName; //닉네임
     private String email; //이메일 주소
+    private String companyName;
+    private String position;
+    private Integer matchCount;
 
 }
