@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "com.usedcar.dev.repository.AuctionRepository">
+    <insert id="putCarOnAuction" useGeneratedKeys="true" keyColumn="id">
+        insert into auction (selling_car_id, start_price, dealer_id, betting_price, auction_check)
+        VALUES (#{sellingCarId},#{startPrice} , #{dealerId}, #{bettingPrice},  #{auctionCheck})
+
+    </insert>
+    <select id="findAllAuction" resultType="ActionList">
+        select a.start_price as startingPrice, a.betting_price as biddingPrice, u.name as sellerName,  d.name as dealerName
+        from auction as a
+        left join selling_car as sc on sc.id = a.selling_car_id
+        left join users as u on u.id = sc.seller_id
+        left join dealers as d on d.id = a.dealer_id;
+    </select>
+
+<!--    <select id="findOneSellingById" resultType="SellingList" parameterType="Integer">-->
+<!--        select u.nick_name as seller, mf.name as manufacturer, m.name as model,-->
+<!--        m.car_type as carType, dm.name as detailModel, sc.price as price, sc.mileage as mileage,-->
+<!--        u.locale as location, concat(sc.buy_year,sc.buy_month) as buyDate,-->
+<!--        sc.color as color, sc.fuel as fuel, sc.drive_type as driveType-->
+<!--        from selling_car as sc-->
+<!--        left join manufacturer as mf on mf.id = sc.manufacturer_id-->
+<!--        left join model as m on m.id = sc.model_id-->
+<!--        left join detail_model as dm on dm.id = sc.detail_model_id-->
+<!--        left join users as u on u.id = sc.seller_id-->
+<!--        where sc.id = #{id};-->
+<!--    </select>-->
+<!--    <update id="successDeal">-->
+<!--        update Selling_car set-->
+<!--        buyer_id = #{buyerId}, buy_check = 1-->
+<!--        where id = #{id};-->
+<!--    </update>-->
+</mapper>

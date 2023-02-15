@@ -1,6 +1,6 @@
 package com.usedcar.dev.domain.dto;
 
-import com.usedcar.dev.domain.request.SignupRequest;
+import com.usedcar.dev.domain.request.DealerSignupRequest;
 import lombok.*;
 
 @Getter
@@ -8,24 +8,30 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Users {
+public class Dealers {
     private Integer id;
-    private String userId;
-    private String userPw;
+    private String dealerId;
+    private String dealerPw;
     private String name;
     private String phoneNumber;
     private String locale; //지역
     private String nickName;
     private String email;
+    private String companyName;
+    private String position;
+    private Integer matchCount;
 
-    public Users(Integer id, SignupRequest request) {
+    public Dealers(Integer id, DealerSignupRequest request) {
         this.id = id;
-        this.userId = request.getUserId();
-        this.userPw = request.getUserPw();
+        this.dealerId = request.getDealerId();
+        this.dealerPw = request.getDealerPw();
         this.name = request.getName();
         this.phoneNumber = request.getPhoneNumber();
         this.locale = request.getLocale();
         this.nickName = request.getNickName();
         this.email = request.getEmail();
+        this.companyName = request.getCompanyName();
+        this.position = request.getPosition();
+        this.matchCount = request.getMatchCount();
     }
 }

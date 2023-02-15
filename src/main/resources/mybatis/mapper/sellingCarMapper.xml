@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "com.usedcar.dev.repository.SellingCarRepository">
+    <insert id="putCar" useGeneratedKeys="true" keyColumn="id">
+        insert into selling_car (seller_id, manufacturer_id, model_id, car_type,
+        detail_model_id, color, fuel, drive_type, mileage, location, buy_year, buy_month, price)
+        values (#{sellerId}, #{manufacturerId}, #{modelId}, #{carType}, #{detailModelId},
+        #{color}, #{fuel}, #{driveType}, #{mileage}, #{location}, #{buyYear}, #{buyMonth}, #{price})
+    </insert>
+    <select id="findAllSelling" resultType="SellingList">
+        select u.nick_name as seller, mf.name as manufacturer, m.name as model,
+        m.car_type as carType, dm.name as detailModel, sc.price as price, sc.mileage as mileage,
+        u.locale as location, concat(sc.buy_year,sc.buy_month) as buyDate
+        from selling_car as sc
+        left join manufacturer as mf on mf.id = sc.manufacturer_id
+        left join model as m on m.id = sc.model_id
+        left join detail_model as dm on dm.id = sc.detail_model_id
+        left join users as u on u.id = sc.seller_id;
+    </select>
+    <select id="findOneSellingById" resultType="SellingList" parameterType="Integer">
+        select u.nick_name as seller, mf.name as manufacturer, m.name as model,
+        m.car_type as carType, dm.name as detailModel, sc.price as price, sc.mileage as mileage,
+        u.locale as location, concat(sc.buy_year,sc.buy_month) as buyDate,
+        sc.color as color, sc.fuel as fuel, sc.drive_type as driveType
+        from selling_car as sc
+        left join manufacturer as mf on mf.id = sc.manufacturer_id
+        left join model as m on m.id = sc.model_id
+        left join detail_model as dm on dm.id = sc.detail_model_id
+        left join users as u on u.id = sc.seller_id
+        where sc.id = #{id};
+    </select>
+    <update id="successDeal">
+        update Selling_car set
+        buyer_id = #{buyerId}, buy_check = 1
+        where id = #{id};
+    </update>
+</mapper>
